@@ -1,4 +1,11 @@
-//https://api.github.com/users/username/repos
+//
+
+const apiKey = "";
+const searchUrl = "https://api.github.com/users/username/repos";
+
+function formatQueryParams(userObject){
+  const items = Object.keys(userObject).map(key => `${key}=${userObject[key]}`).join("&");
+}
 
 function main(){
   $(`#submit`).on("click", function(){
@@ -8,6 +15,12 @@ function main(){
   })
 }
 
-function getUserName(username)
+function getUserName(username, sort="created"){
+  const userObject = {
+    type: "owner",
+    sort,
+    direction: "descending",
+  };
+}
 
 $(main);
